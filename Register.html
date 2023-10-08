@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="fonttext.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="register">
+      <div class="container">
+        <div class="content">
+          <div class="div">
+            <div class="heading-and">
+              <div class="heading">Register your account</div>
+              <div class="supporting-text">Daftar kan dirimu</div>
+            </div>
+            <div class="form">
+              <div class="form-fields">
+                <div class="row">
+                  <div class="input-field">
+                    <div class="div-2">
+                      <div class="div-2">
+                        <input class="label" for="input-2" placeholder="First name" type="text" />
+                        <div class="input">
+                          <div class="content-2"><input class="text" id="input-2" /></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-field">
+                    <div class="div-2">
+                      <div class="div-2">
+                        <input class="label" for="input-4" placeholder="Last name" type="text" />
+                        <div class="input">
+                          <div class="content-2">
+                            <input class="text-2" placeholder="Last name" type="text" id="input-4" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-field-base-wrapper">
+                  <div class="div-2">
+                    <div class="div-2">
+                      <input class="label" for="input-6" placeholder="Email" type="email" />
+                      <div class="input">
+                        <div class="content-2">
+                          <input class="text-2" placeholder="you@gmail.com" type="email" id="input-6" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-field-base-wrapper">
+                  <div class="div-2">
+                    <div class="div-2">
+                      <div class="text-wrapper">Phone number</div>
+                      <div class="input-2">
+                        <select id="country">
+                          <option value="IND">IND</option>
+                        </select>
+                        <div class="text-input">
+                          <input class="text-3" id="phone" type="text" maxlength="13" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="checkbox">
+                  <input type="checkbox" id="agree-checkbox" />
+                  <p class="p">
+                    <span class="span">You agree to our friendly </span>
+                    <span class="text-wrapper-2">privacy policy</span>
+                    <span class="span">.</span>
+                  </p>
+                </div>
+              </div>
+              <div class="actions">
+                <button class="button" onclick="sendMessage()">
+                  <div class="button-base"><div class="text-4">Send message</div></div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img class="IMAGE" src="r-image.png" />
+      </div>
+    </div>
+
+    <script>
+      function sendMessage() {
+        var country = document.getElementById("country").value;
+        var phone = document.getElementById("phone").value;
+
+        var fullPhoneNumber = "+" + country + " " + phone;
+
+        alert("Mengirim pesan ke " + fullPhoneNumber);
+      }
+    </script>
+
+<script>
+  document.getElementById("phone").addEventListener("input", function () {
+    this.value = this.value.replace(/\D/g, "");
+
+    if (this.value.length > 13) {
+      this.value = this.value.substring(0, 13);
+    }
+  });
+</script>
+
+  </body>
+</html>
